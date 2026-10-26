@@ -1,0 +1,437 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Spun Central Connect</title>
+<link rel="stylesheet" href="assets/css/brand.css">
+<style>
+  section{width:100%;padding:96px 56px;position:relative;overflow:hidden;}
+  .inner{max-width:var(--maxw);margin:0 auto;position:relative;z-index:2;}
+  section.alt{background:var(--white);}
+  section.on-ink{background:var(--ink);color:var(--bg);}
+
+  /* ---------- hero ---------- */
+  .hero{padding:88px 56px 70px;}
+  .hero-inner{max-width:900px;}
+  .hero .kicker{font-family:var(--f-mono);font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:var(--purple);display:flex;align-items:center;gap:8px;margin-bottom:26px;}
+  .hero .kicker .dot{width:7px;height:7px;border-radius:50%;background:var(--purple);}
+  .h-hero{font-weight:900;font-size:clamp(42px,7vw,96px);line-height:0.98;letter-spacing:-0.03em;}
+  .hero .lede{margin-top:26px;font-size:clamp(16px,1.5vw,19px);color:var(--ink-soft);line-height:1.6;max-width:62ch;}
+  .hero-logo-mark{position:absolute;right:-60px;top:-40px;width:340px;opacity:0.05;z-index:1;pointer-events:none;}
+  @media(max-width:760px){.hero-logo-mark{display:none;}}
+
+  /* ---------- section heading pattern ---------- */
+  .sec-label{display:flex;align-items:center;gap:10px;}
+  .sec-head{margin-top:14px;font-weight:900;font-size:clamp(30px,4.6vw,54px);line-height:1.02;letter-spacing:-0.025em;}
+  .sec-sub{margin-top:14px;font-size:15.5px;color:var(--gray);max-width:62ch;line-height:1.6;}
+  .on-ink .sec-sub{color:#b9b9b2;}
+
+  /* ---------- lema ---------- */
+  .lema-trip{margin-top:52px;display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid var(--line-on-dark);border-left:1px solid var(--line-on-dark);}
+  @media(max-width:860px){.lema-trip{grid-template-columns:1fr;}}
+  .lema-cell{border-right:1px solid var(--line-on-dark);border-bottom:1px solid var(--line-on-dark);padding:30px 28px;}
+  .lema-cell .lnum{font-family:var(--f-mono);font-size:11px;color:#8a8a83;}
+  .lema-cell h3{margin-top:14px;font-family:var(--f-accent);font-weight:400;font-size:clamp(24px,2.6vw,32px);letter-spacing:-0.01em;color:var(--green);}
+  .lema-cell p{margin-top:12px;font-size:13.8px;color:#c9c9c2;line-height:1.6;}
+  .lema-statement{margin-top:28px;font-family:var(--f-accent);font-weight:400;font-size:clamp(20px,2.4vw,28px);line-height:1.3;color:var(--bg);max-width:60ch;}
+  .lema-statement b{color:var(--green);}
+
+  /* ---------- valores grid ---------- */
+  .valores-grid{margin-top:48px;display:grid;grid-template-columns:repeat(2,1fr);gap:0;border-top:1px solid var(--line);border-left:1px solid var(--line);}
+  @media(max-width:760px){.valores-grid{grid-template-columns:1fr;}}
+  .valor-card{border-right:1px solid var(--line);border-bottom:1px solid var(--line);padding:30px 28px;transition:background .2s ease;}
+  .valor-card:hover{background:var(--white);}
+  .valor-card .vnum{font-family:var(--f-mono);font-size:11px;color:var(--gray);}
+  .valor-card h3{margin-top:12px;font-weight:800;font-size:clamp(20px,2.2vw,26px);letter-spacing:-0.015em;}
+  .valor-card .vdesc{margin-top:10px;font-size:13.8px;color:#4a4a45;line-height:1.6;}
+  .valor-card .vbullets{margin-top:14px;}
+  .valor-card .vbullets li{position:relative;padding-left:16px;font-size:12.8px;color:var(--gray);line-height:1.55;margin-top:6px;}
+  .valor-card .vbullets li::before{content:"—";position:absolute;left:0;color:var(--light-gray);}
+  .valor-card .vcare{
+    margin-top:16px;padding:12px 0 2px 14px;border-left:2px solid var(--orange);font-size:12.2px;color:#5a5a55;line-height:1.55;
+  }
+  .valor-card .vcare b{color:var(--ink);}
+
+  /* ---------- como funcionam juntos ---------- */
+  .pair-row{margin-top:40px;}
+  .pair{display:grid;grid-template-columns:1fr 220px;gap:28px;align-items:center;padding:26px 0;border-bottom:1px solid var(--line);}
+  .pair:first-child{border-top:1px solid var(--line);}
+  @media(max-width:760px){.pair{grid-template-columns:1fr;gap:12px;}}
+  .pair-combo{font-family:var(--f-accent);font-weight:400;font-size:clamp(18px,2.1vw,25px);letter-spacing:-0.005em;display:flex;align-items:center;gap:14px;flex-wrap:wrap;}
+  .pair-combo .plus{font-family:var(--f-mono);font-size:13px;color:var(--light-gray);}
+  .pair-combo .w1{color:var(--purple);}
+  .pair-combo .w2{color:var(--orange);}
+  .pair p{font-size:13.2px;color:var(--gray);line-height:1.55;}
+
+  /* ---------- marcas ---------- */
+  .marcas-grid{margin-top:48px;display:grid;grid-template-columns:1fr 1fr;gap:0;border-top:1px solid var(--line-on-dark);border-left:1px solid var(--line-on-dark);}
+  @media(max-width:760px){.marcas-grid{grid-template-columns:1fr;}}
+  .marca-cell{border-right:1px solid var(--line-on-dark);border-bottom:1px solid var(--line-on-dark);padding:32px;transition:background .2s ease,color .2s ease;}
+  .marca-cell:hover{background:var(--bg);color:var(--ink);}
+  .marca-cell .label{margin-bottom:10px;}
+  .marca-cell:hover .label{color:#6a6a63;}
+  .marca-cell h3{font-weight:800;font-size:clamp(20px,2.3vw,28px);letter-spacing:-0.015em;}
+  .marca-cell p{margin-top:10px;font-size:13.3px;color:#9d9d95;max-width:46ch;line-height:1.55;}
+  .marca-cell:hover p{color:#4a4a45;}
+  .marca-tags{margin-top:12px;display:flex;gap:12px;flex-wrap:wrap;}
+  .marca-tags span{font-family:var(--f-mono);font-size:10px;letter-spacing:0.06em;text-transform:uppercase;color:#7a7a74;}
+  .marca-cell:hover .marca-tags span{color:#8a8a83;}
+
+  /* ---------- institucional x esportivo ---------- */
+  .split-cols{margin-top:44px;display:grid;grid-template-columns:1fr 1fr;gap:0;border-radius:4px;overflow:hidden;}
+  @media(max-width:760px){.split-cols{grid-template-columns:1fr;}}
+  .split-col{padding:36px 32px;}
+  .split-col.institucional{background:var(--purple);color:var(--bg);}
+  .split-col.esportivo{background:var(--ink);color:var(--bg);}
+  .split-col .scaption{font-family:var(--f-mono);font-size:11px;letter-spacing:0.1em;text-transform:uppercase;opacity:0.72;}
+  .split-col h3{margin-top:12px;font-weight:800;font-size:clamp(22px,2.6vw,32px);letter-spacing:-0.02em;}
+  .split-col p{margin-top:14px;font-size:14px;line-height:1.6;opacity:0.88;max-width:48ch;}
+  .split-col .stags{margin-top:16px;display:flex;gap:10px;flex-wrap:wrap;}
+  .split-col .stags span{font-family:var(--f-mono);font-size:10px;letter-spacing:0.06em;text-transform:uppercase;opacity:0.72;border:1px solid currentColor;padding:4px 9px;border-radius:999px;}
+
+  /* ---------- aprofundar / CTA buttons ---------- */
+  .deep-grid{margin-top:48px;display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+  @media(max-width:760px){.deep-grid{grid-template-columns:1fr;}}
+  .deep-card{
+    padding:40px 34px;border:1.5px solid var(--ink);border-radius:6px;transition:transform .2s ease,box-shadow .2s ease;
+    display:flex;flex-direction:column;justify-content:space-between;min-height:220px;
+  }
+  .deep-card:hover{transform:translateY(-4px);box-shadow:0 14px 34px rgba(34,34,34,0.12);}
+  .deep-card.design{background:var(--green);}
+  .deep-card.comms{background:var(--bg);}
+  .deep-card .dc-top .dc-label{font-family:var(--f-mono);font-size:11px;letter-spacing:0.1em;text-transform:uppercase;opacity:0.7;}
+  .deep-card h3{margin-top:14px;font-weight:900;font-size:clamp(28px,3.4vw,44px);letter-spacing:-0.025em;}
+  .deep-card p{margin-top:10px;font-size:13.8px;color:var(--ink-soft);max-width:38ch;}
+  .deep-card .dc-go{
+    margin-top:26px;display:inline-flex;align-items:center;gap:10px;font-family:var(--f-mono);
+    font-size:12.5px;letter-spacing:0.08em;text-transform:uppercase;border-bottom:1.5px solid var(--ink);padding-bottom:4px;align-self:flex-start;
+  }
+  .badge-obras{display:inline-flex;align-items:center;gap:6px;font-family:var(--f-mono);font-size:10px;letter-spacing:0.08em;text-transform:uppercase;color:var(--orange);border:1px solid var(--orange);padding:3px 9px;border-radius:999px;margin-top:14px;}
+
+  .closing-line{margin-top:40px;font-family:var(--f-mono);font-size:12px;color:#7a7a74;letter-spacing:0.03em;}
+
+  /* ---------- agenda ---------- */
+  .agenda-grid{margin-top:48px;display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid var(--line);border-left:1px solid var(--line);}
+  @media(max-width:860px){.agenda-grid{grid-template-columns:1fr;}}
+  .agenda-cell{border-right:1px solid var(--line);border-bottom:1px solid var(--line);padding:30px 28px;}
+  .agenda-cell .ag-cadence{font-family:var(--f-mono);font-size:11px;letter-spacing:0.06em;text-transform:uppercase;color:var(--purple);}
+  .agenda-cell h3{margin-top:14px;font-weight:800;font-size:clamp(20px,2.2vw,26px);letter-spacing:-0.015em;}
+  .agenda-cell p{margin-top:10px;font-size:13.5px;color:var(--gray);line-height:1.6;}
+  .agenda-cell.highlight{background:var(--orange);color:var(--bg);}
+  .agenda-cell.highlight .ag-cadence{color:var(--bg);opacity:0.85;}
+  .agenda-cell.highlight p{color:var(--bg);opacity:0.92;}
+  .agenda-note{margin-top:18px;font-size:12.5px;color:var(--gray);}
+</style>
+
+<header class="site-header">
+  <div class="shd-inner">
+    <a class="site-logo" href="#top"><img src="assets/logo/logo-horizontal-preto.svg" alt="Spun"></a>
+    <nav class="site-nav">
+      <a href="#lema">Lema</a>
+      <a href="#valores">Valores</a>
+      <a href="#marcas">Marcas</a>
+      <a href="#institucional">Institucional × Esportivo</a>
+      <a href="#agenda">Agenda</a>
+      <div class="nav-cta">
+        <a class="go-design" href="design.html">Design</a>
+        <a class="go-comms" href="comunicacao.html">Comunicação</a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<section class="hero" id="top">
+  <img class="hero-logo-mark" src="assets/logo/logo-simbolo-preto.svg" alt="">
+  <div class="hero-inner">
+    <div class="kicker"><span class="dot"></span>Spun Central Connect</div>
+    <h1 class="h-hero">Tudo que o time<br>precisa saber,<br>num só lugar.</h1>
+    <p class="lede">Essa é a central do time de Marketing Institucional — comunicação e design. Aqui ficam os nossos valores, as marcas que atendemos, a diferença entre o institucional e o esportivo, e os dois caminhos pra se aprofundar: Design e Comunicação.</p>
+  </div>
+</section>
+
+<section class="on-ink" id="lema">
+  <div class="inner">
+    <div class="sec-label label"><span class="dot-green">●</span>&nbsp; Nosso lema</div>
+    <h2 class="sec-head">Errar rápido.<br>Aprender rápido.<br>Consertar rápido.</h2>
+    <p class="sec-sub">Somos um time remoto e diverso — então comunicação intencional não é detalhe, é o que faz tudo funcionar. Esse documento existe pra apoiar decisões do dia a dia, conversas de feedback e a chegada de quem está entrando agora.</p>
+
+    <div class="lema-trip">
+      <div class="lema-cell">
+        <div class="lnum mono">01</div>
+        <h3>Errar rápido</h3>
+        <p>Compartilhar ideias e primeiras versões cedo — antes de estarem prontas demais pra mudar.</p>
+      </div>
+      <div class="lema-cell">
+        <div class="lnum mono">02</div>
+        <h3>Aprender rápido</h3>
+        <p>Entender o que aconteceu sem procurar culpados. O aprendizado de uma pessoa vira aprendizado do time.</p>
+      </div>
+      <div class="lema-cell">
+        <div class="lnum mono">03</div>
+        <h3>Consertar rápido</h3>
+        <p>Contar logo quando há erro, buscar a solução em conjunto. Pedir ajuda é sempre bem-vindo.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="alt" id="valores">
+  <div class="inner">
+    <div class="sec-label label"><span class="dot-purple">●</span>&nbsp; Nossos valores</div>
+    <h2 class="sec-head">Oito valores que guiam como a gente trabalha.</h2>
+    <p class="sec-sub">Cada valor vem com um cuidado — porque todo valor, levado longe demais, pode virar o problema que ele deveria evitar.</p>
+
+    <div class="valores-grid">
+      <div class="valor-card">
+        <div class="vnum mono">01</div>
+        <h3>Responsabilidade</h3>
+        <p class="vdesc">Cuidar do que a gente assume, do início ao fim.</p>
+        <ul class="vbullets">
+          <li>Avisar cedo sobre prazos em risco</li>
+          <li>Revisar o próprio trabalho com carinho</li>
+          <li>Reconhecer erros e já propor uma solução</li>
+        </ul>
+        <div class="vcare"><b>Um cuidado:</b> não é carregar tudo sozinho(a) — pedir apoio também é responsabilidade.</div>
+      </div>
+      <div class="valor-card">
+        <div class="vnum mono">02</div>
+        <h3>Respeito</h3>
+        <p class="vdesc">Ouvir e considerar cada pessoa.</p>
+        <ul class="vbullets">
+          <li>Feedback sobre o trabalho e os fatos, nunca sobre a pessoa</li>
+          <li>Cuidar de horários e foco de quem está por perto</li>
+          <li>Acolher quem está chegando no time</li>
+        </ul>
+        <div class="vcare"><b>Um cuidado:</b> respeito não é evitar as conversas difíceis.</div>
+      </div>
+      <div class="valor-card">
+        <div class="vnum mono">03</div>
+        <h3>Autonomia</h3>
+        <p class="vdesc">Confiança pra escolher a melhor forma de trabalhar.</p>
+        <ul class="vbullets">
+          <li>Alinhar previamente só o que precisa — escopo, prazo, acordos com clientes</li>
+          <li>Perguntar sem constrangimento</li>
+          <li>Registrar tudo no ClickUp</li>
+        </ul>
+        <div class="vcare"><b>Um cuidado:</b> autonomia não é trabalhar isolado(a).</div>
+      </div>
+      <div class="valor-card">
+        <div class="vnum mono">04</div>
+        <h3>Leveza</h3>
+        <p class="vdesc">Um ambiente leve ajuda a criatividade a acontecer.</p>
+        <ul class="vbullets">
+          <li>Bom humor é bem-vindo — inclusive em reunião</li>
+          <li>Calma e foco na solução, não no drama</li>
+          <li>Celebrar entregas e pequenas conquistas</li>
+        </ul>
+        <div class="vcare"><b>Um cuidado:</b> leveza convive com compromisso.</div>
+      </div>
+      <div class="valor-card">
+        <div class="vnum mono">05</div>
+        <h3>Velocidade</h3>
+        <p class="vdesc">Ajustar no caminho em vez de esperar o momento perfeito.</p>
+        <ul class="vbullets">
+          <li>Compartilhar primeiras versões cedo</li>
+          <li>Sinalizar travamentos logo que aparecem</li>
+        </ul>
+        <div class="vcare"><b>Um cuidado:</b> velocidade não é correria — sem retrabalho, sem sobrecarga.</div>
+      </div>
+      <div class="valor-card">
+        <div class="vnum mono">06</div>
+        <h3>Transparência</h3>
+        <p class="vdesc">Compartilhar informação pra ninguém precisar adivinhar.</p>
+        <ul class="vbullets">
+          <li>Status sempre atualizado no ClickUp</li>
+          <li>Tags de prioridade com critério — Urgente, Alta, Normal</li>
+          <li>Decisões registradas em lugares acessíveis a todos</li>
+        </ul>
+        <div class="vcare"><b>Um cuidado:</b> transparência caminha com respeito — privacidade e confidencialidade dos clientes importam.</div>
+      </div>
+      <div class="valor-card">
+        <div class="vnum mono">07</div>
+        <h3>Proatividade</h3>
+        <p class="vdesc">À vontade pra puxar conversas e propor caminhos.</p>
+        <ul class="vbullets">
+          <li>Compartilhar riscos assim que percebidos</li>
+          <li>Sugerir ideias mesmo fora da própria área</li>
+          <li>Oferecer ajuda quando perceber que alguém precisa</li>
+        </ul>
+        <div class="vcare"><b>Um cuidado:</b> proatividade combina com diálogo — conversar antes de assumir algo que é de outra pessoa.</div>
+      </div>
+      <div class="valor-card">
+        <div class="vnum mono">08</div>
+        <h3>Comunicação</h3>
+        <p class="vdesc">Clareza, no canal certo, na hora certa.</p>
+        <ul class="vbullets">
+          <li>Trazer contexto nas mensagens</li>
+          <li>Passagens entre times com, no mínimo, 2 dias úteis de antecedência</li>
+          <li>Perguntar na dúvida; conversar diretamente quando há discordância</li>
+        </ul>
+        <div class="vcare"><b>Um cuidado:</b> comunicar bem não é comunicar demais.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="on-ink">
+  <div class="inner">
+    <div class="sec-label label"><span class="dot-green">●</span>&nbsp; Como os valores funcionam juntos</div>
+    <h2 class="sec-head">Nenhum valor funciona sozinho.</h2>
+    <p class="sec-sub">Eles se apoiam em dupla — um dá o impulso, o outro dá o cuidado.</p>
+
+    <div class="pair-row">
+      <div class="pair">
+        <div>
+          <div class="pair-combo"><span class="w1">Autonomia</span><span class="plus">+</span><span class="w2">Responsabilidade</span></div>
+          <p style="margin-top:8px;">A liberdade de escolher como fazer, com o cuidado de garantir o resultado.</p>
+        </div>
+      </div>
+      <div class="pair">
+        <div>
+          <div class="pair-combo"><span class="w1">Velocidade</span><span class="plus">+</span><span class="w2">Transparência</span></div>
+          <p style="margin-top:8px;">Andar rápido funciona porque todo mundo sabe onde as coisas estão.</p>
+        </div>
+      </div>
+      <div class="pair">
+        <div>
+          <div class="pair-combo"><span class="w1">Proatividade</span><span class="plus">+</span><span class="w2">Respeito</span></div>
+          <p style="margin-top:8px;">Tomar iniciativa considerando o espaço e o tempo de cada pessoa.</p>
+        </div>
+      </div>
+      <div class="pair">
+        <div>
+          <div class="pair-combo"><span class="w1">Comunicação</span><span class="plus">+</span><span class="w2">Leveza</span></div>
+          <p style="margin-top:8px;">Dizer o que precisa ser dito, de um jeito que a pessoa consiga ouvir.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="alt" id="marcas">
+  <div class="inner">
+    <div class="sec-label label"><span class="dot-purple">●</span>&nbsp; Marcas que atendemos</div>
+    <h2 class="sec-head">O ecossistema Spun.</h2>
+    <p class="sec-sub">Resumo rápido de cada marca — pra entender o tom e o papel de cada uma antes de produzir qualquer coisa.</p>
+
+    <div class="marcas-grid">
+      <div class="marca-cell">
+        <div class="label">Marca principal</div>
+        <h3>Spun</h3>
+        <p>A marca corporativa. Conteúdos que carregam a cultura de errar rápido, aprender rápido, consertar rápido — inteligência em movimento, sempre com intenção de negócio por trás.</p>
+        <div class="marca-tags"><span>Instagram</span></div>
+      </div>
+      <div class="marca-cell">
+        <div class="label">Interno</div>
+        <h3>Spunmers</h3>
+        <p>Canal só pros Spunmers, com conteúdos e comunicados internos — aniversários, novidades e um pouco mais sobre as outras áreas da Spun.</p>
+        <div class="marca-tags"><span>Instagram</span><span>Newsletter</span><span>Discord</span></div>
+      </div>
+      <div class="marca-cell">
+        <div class="label">Internamente: Spun Ads</div>
+        <h3>Spun for Publishers</h3>
+        <p>Canal técnico voltado ao mercado de publishers, posicionando a Spun como referência em monetização e gestão de inventário.</p>
+        <div class="marca-tags"><span>Instagram</span></div>
+      </div>
+      <div class="marca-cell">
+        <div class="label">Produto</div>
+        <h3>Absol</h3>
+        <p>Coach de IA em tempo real para League of Legends, do El Gato. Orientações por voz direto no ouvido, sem tirar o jogador da tela.</p>
+        <div class="marca-tags"><span>Instagram</span><span>TikTok</span><span>X</span></div>
+      </div>
+      <div class="marca-cell">
+        <div class="label">Movimento</div>
+        <h3>WIBR</h3>
+        <p>Nascido nos games e esports pra ampliar a presença feminina dentro e fora do servidor — visibilidade que se transforma em oportunidade.</p>
+        <div class="marca-tags"><span>Instagram</span><span>Newsletter</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="institucional">
+  <div class="inner">
+    <div class="sec-label label"><span class="dot-orange">●</span>&nbsp; Institucional × Esportivo</div>
+    <h2 class="sec-head">Dois universos, dois times.</h2>
+    <p class="sec-sub">A Spun tem duas frentes de comunicação bem distintas — e é importante saber qual é qual antes de pedir ou produzir qualquer material.</p>
+
+    <div class="split-cols">
+      <div class="split-col institucional">
+        <h3>Spun</h3>
+        <p>Branding, diretrizes de marca, social das marcas e comunicação institucional. É a marca corporativa — exige narrativa integrada com as demais áreas de negócio, e é esse time (o nosso) que cuida dela.</p>
+        <div class="stags"><span>Branding</span><span>Diretrizes</span><span>Social corporativo</span></div>
+      </div>
+      <div class="split-col esportivo">
+        <h3>LOS e MIBR</h3>
+        <p>Ecossistema de esports, com identidade própria e vivido no dia a dia pelo time de E-sports. Linguagem, calendário e produção próprios — não passa pelo nosso fluxo de Design Institucional.</p>
+        <div class="stags"><span>Identidade própria</span><span>Time dedicado</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="alt" id="agenda">
+  <div class="inner">
+    <div class="sec-label label"><span class="dot-purple">●</span>&nbsp; Agenda</div>
+    <h2 class="sec-head">Nosso ritmo.</h2>
+    <p class="sec-sub">Dois encontros fixos pra todo o time institucional — além do encontro quinzenal que cada área já tem na própria rotina (o Design, por exemplo, tem o seu).</p>
+
+    <div class="agenda-grid">
+      <div class="agenda-cell">
+        <div class="ag-cadence mono">Quinzenal · terças-feiras · 1h</div>
+        <h3>Encontro Institucional</h3>
+        <p>Reunião com todos os setores da agência. Antes era semanal — agora passa a ser quinzenal, no mesmo formato de 1 hora.</p>
+      </div>
+      <div class="agenda-cell">
+        <div class="ag-cadence mono">Mensal</div>
+        <h3>Sessões Criativas</h3>
+        <p>Momento pra brainstorms livres e soltar a criatividade — fora da rotina de entregas do dia a dia.</p>
+      </div>
+      <div class="agenda-cell highlight">
+        <div class="ag-cadence mono">5 de novembro</div>
+        <h3>Happy Hour</h3>
+        <p>Confraternização do time. O convite vai pra agenda de todo mundo em breve.</p>
+      </div>
+    </div>
+    <p class="agenda-note">A cadência de cada área — como as reuniões próprias do Design — continua nas páginas de cada time.</p>
+  </div>
+</section>
+
+<section class="alt" id="aprofundar">
+  <div class="inner">
+    <div class="sec-label label"><span class="dot-green">●</span>&nbsp; Se aprofundar</div>
+    <h2 class="sec-head">De onde você quer continuar?</h2>
+    <p class="sec-sub">A Central Connect é o panorama. Pra rotina, processos e referências do dia a dia, siga por um dos dois caminhos abaixo.</p>
+
+    <div class="deep-grid">
+      <a class="deep-card design" href="design.html">
+        <div class="dc-top">
+          <div class="dc-label">Aprofundar</div>
+          <h3>Design</h3>
+          <p>Processos, cultura, workflow no ClickUp, acessos e o time de Design — tudo que você precisa pro dia a dia.</p>
+        </div>
+        <div class="dc-go">Entrar no Design Hub <span class="arrow">→</span></div>
+      </a>
+      <a class="deep-card comms" href="comunicacao.html">
+        <div class="dc-top">
+          <div class="dc-label">Aprofundar</div>
+          <h3>Comunicação</h3>
+          <p>Diretrizes, tom de voz e processos do time de Comunicação institucional.</p>
+          <div class="badge-obras">● Em obras</div>
+        </div>
+        <div class="dc-go">Ver o que já tem <span class="arrow">→</span></div>
+      </a>
+    </div>
+
+    <div class="closing-line">Essa central é um documento vivo — cresce junto com o time.</div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="finner">
+    <div>
+      <div class="ftitle">Spun Central Connect</div>
+      <div class="fnote">Marketing Institucional — Comunicação e Design. Feita com cuidado pela Camile, pra quem faz parte desse time hoje e pra quem vai fazer parte amanhã.</div>
+    </div>
+    <div class="fmeta">Central Connect<br>Interno<br>Atualizado / Out 2026</div>
+  </div>
+</footer>
+
+</body></html>
