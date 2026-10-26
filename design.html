@@ -87,10 +87,6 @@
   }
   .hero-inner{max-width:960px;}
   .hero .label{margin-bottom:26px;}
-  .hero-lines{overflow:hidden;}
-  .hero-lines span{display:block;transform:translateY(105%);transition:transform .9s cubic-bezier(.16,.9,.2,1);}
-  .hero-lines.on span{transform:translateY(0);}
-  .hero-lines:nth-of-type(1) span{transition-delay:.05s;}
   .hero .lede{margin-top:30px;color:#bcbcb4;}
   .hero-meta{
     margin-top:34px;font-family:var(--f-mono);font-size:11px;letter-spacing:0.14em;
@@ -336,10 +332,7 @@
     <header class="hero" id="top">
       <div class="hero-inner">
         <div class="label"><span class="acid">●</span>&nbsp; Design @ Spun</div>
-        <h1 class="h-hero">
-          <div class="hero-lines"><span>Faça um bom trabalho.</span></div>
-          <div class="hero-lines"><span>Faça com propósito.</span></div>
-        </h1>
+        <h1 class="h-hero">Faça um bom trabalho.<br>Faça com propósito.</h1>
         <p class="lede">Tudo o que você precisa para trabalhar com Design na Spun — sem ruído, sem informação perdida e sem depender de alguém te explicar duas vezes.</p>
         <div class="hero-meta">Processos · Cultura · Time · Acessos</div>
         <div class="hero-sign">— <b>Camile Freitas</b>, Coordenadora de Design</div>
@@ -736,13 +729,6 @@
 
 <script>
   var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-  // hero line reveal
-  window.requestAnimationFrame(function(){
-    setTimeout(function(){
-      document.querySelectorAll('.hero-lines').forEach(function(el){ el.classList.add('on'); });
-    }, reduceMotion ? 0 : 120);
-  });
 
   // scroll progress + back to top
   var progressBar = document.getElementById('progress');
